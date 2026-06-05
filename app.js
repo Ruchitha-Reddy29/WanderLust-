@@ -6,6 +6,7 @@ if (process.env.NODE_ENV !== "production") {
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+res.render("listings/index.ejs", { allListings });
 
 const path = require('path');
 const methodOverride = require('method-override');
@@ -70,9 +71,9 @@ const sessionOptions = {
     }
 };
 
-// app.get("/", (req, res)=>{
-//     res.send("Hi, Iam root");
-// })
+app.get("/", (req, res)=>{
+    res.render("listings/index.ejs", { allListings });
+});
 
 
 app.use(session(sessionOptions));
@@ -147,6 +148,6 @@ app.use((err, req, res, next)=>{
 
 
 
-app.listen(8080,()=>{
-    console.log('Server is running on port 8080');
+app.listen(port,()=>{
+    console.log('Server is running on port ${port}');
 });
