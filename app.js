@@ -6,7 +6,7 @@ if (process.env.NODE_ENV !== "production") {
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-res.render("listings/index.ejs", { allListings });
+
 
 const path = require('path');
 const methodOverride = require('method-override');
