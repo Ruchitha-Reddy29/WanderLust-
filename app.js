@@ -2,7 +2,7 @@ if (process.env.NODE_ENV !== "production") {
     require('dotenv').config();
 }
 
-
+const port = process.env.PORT || 8080;
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -148,6 +148,6 @@ app.use((err, req, res, next)=>{
 
 
 
-app.listen(port,()=>{
-    console.log('Server is running on port ${port}');
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
