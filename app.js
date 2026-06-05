@@ -71,8 +71,8 @@ const sessionOptions = {
     }
 };
 
-app.get("/", (req, res)=>{
-    res.render("listings/index.ejs", { allListings });
+app.get("/", (req, res) => {
+    res.redirect("/listings");
 });
 
 
